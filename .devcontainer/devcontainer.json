@@ -1,16 +1,26 @@
 // For format details, see https://aka.ms/devcontainer.json. For config options, see the
 // README at: https://github.com/devcontainers/templates/tree/main/src/ubuntu
 {
-	"name": "GO DEV",
+	"name": "Go DEVS",
 	// Or use a Dockerfile or Docker Compose file. More info: https://containers.dev/guide/dockerfile
 	"image": "mcr.microsoft.com/devcontainers/base:focal",
+	"features": {
+		"ghcr.io/devcontainers/features/go:1": {},
+		"ghcr.io/devcontainers/features/node:1": {},
+		"ghcr.io/devcontainers-contrib/features/kubectl-asdf:2": {},
+		"ghcr.io/devcontainers-contrib/features/node-asdf:0": {},
+		"ghcr.io/devcontainers-contrib/features/ts-node:1": {},
+		"ghcr.io/guiyomh/features/golangci-lint:0": {},
+		"ghcr.io/rio/features/skaffold:2": {},
+		"ghcr.io/wxw-matt/devcontainer-features/command_runner:0": {},
+		"ghcr.io/schlich/devcontainer-features/helmfile:1": {},
+		"ghcr.io/nucleuscloud/devcontainer-features/helmfile:0": {}
+	},
+
+	"forwardPorts": [8080,8081,8082,8083,8084]
 
 	// Features to add to the dev container. More info: https://containers.dev/features.
-	 "features": {
-		"ghcr.io/rio/features/skaffold:2": {},
-		"ghcr.io/devcontainers/features/docker-in-docker:2": {},
-		"ghcr.io/schlich/devcontainer-features/helmfile:1": {}
-	 },
+	// "features": {},
 
 	// Use 'forwardPorts' to make a list of ports inside the container available locally.
 	// "forwardPorts": [],
@@ -19,11 +29,7 @@
 	// "postCreateCommand": "uname -a",
 
 	// Configure tool-specific properties.
-  "customizations" : {
-    "jetbrains" : {
-      "backend" : "IntelliJ"
-    }
-  },
+	// "customizations": {},
 
 	// Uncomment to connect as root instead. More info: https://aka.ms/dev-containers-non-root.
 	// "remoteUser": "root"
